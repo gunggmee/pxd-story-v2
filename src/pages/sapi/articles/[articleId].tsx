@@ -1,5 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import React from "react"
+import fs from "fs/promises"
+import path from "path"
 
 type Props = {
   dummy: string
@@ -20,6 +22,10 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
 
   const props: Props = { dummy: `hello ${articleId}` }
   const revalidate = 60 * 60 // an hour
+
+  const jsonPath = path.join(process.cwd(), "public", "sapi", "articles")
+  fs.mkdir(jsonPath, { recursive: true })
+  fs.writeFile(path.join(jsonPath, `${articleId}.json`), JSON.stringify(props))
 
   return { props, revalidate }
 }
