@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
 
   const jsonPath = path.join(process.cwd(), "public", "sapi", "articles")
   fs.mkdir(jsonPath, { recursive: true })
-  fs.writeFile(path.join(jsonPath, `${articleId}.json`), JSON.stringify(props))
+  await fs.writeFile(path.join(jsonPath, `${articleId}.json`), JSON.stringify(props))
 
   return { props, revalidate }
 }
