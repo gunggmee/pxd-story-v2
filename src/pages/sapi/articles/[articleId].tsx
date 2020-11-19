@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const props: Props = { dummy: `hello ${articleId}` }
   const revalidate = 60 * 60 // an hour
 
-  const jsonPath = path.join(process.cwd(), "public", "sapi", "articles")
+  const jsonPath = path.join("public", "sapi", "articles")
   fs.mkdirSync(jsonPath, { recursive: true })
   fs.writeFileSync(path.join(jsonPath, `${articleId}.json`), JSON.stringify(props))
 
