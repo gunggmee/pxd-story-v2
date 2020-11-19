@@ -16,7 +16,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const articleId = ctx.params?.articleId as string
-  if (!articleId.match(/\d+/)) return { notFound: true }
+  if (!articleId.match(/^\d+$/)) return { notFound: true }
 
   const props: Props = { dummy: `hello ${articleId}` }
   const revalidate = 60 * 60 // an hour
