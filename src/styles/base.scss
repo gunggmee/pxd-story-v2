@@ -1,0 +1,15 @@
+@import "reset";
+@import "typography";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+:root {
+  height: 100%;
+  background-color: #fff;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  height: 100%;
+  padding: 1rem;
+}

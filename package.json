@@ -1,0 +1,73 @@
+{
+  "name": "pxd-story-v2",
+  "version": "0.1.0",
+  "author": "gunggmee@gmail.com",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "export": "next export",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:css": "stylelint --fix '**/*.css'",
+    "lint:js": "tsc --noEmit && eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "start": "next start",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "eslint --fix"
+    ],
+    "**/*.css": [
+      "stylelint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.21",
+    "@next/mdx": "^10.0.1",
+    "d3": "^6.2.0",
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.29.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/d3": "^6.2.0",
+    "@types/jest": "^26.0.15",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.11",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-prettier": "^3.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5",
+    "webpack": "^4.44.2"
+  }
+}

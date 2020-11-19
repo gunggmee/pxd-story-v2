@@ -1,0 +1,10 @@
+/.cache/
+/.next/
+/node_modules/
+/coverage/
+/out/
+/build/
+/public/sapi/
+.DS_Store
+.vercel
+.env*

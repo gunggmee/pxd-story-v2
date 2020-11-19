@@ -1,0 +1,7 @@
+/.cache/
+/.next/
+/node_modules/
+/.next/
+/coverage/
+/out/
+/build/
